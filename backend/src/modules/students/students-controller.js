@@ -18,10 +18,9 @@ const handleAddStudent = asyncHandler(async (req, res) => {
 
 const handleUpdateStudent = asyncHandler(async (req, res) => {
     //write your code
-    const { id } = req.params;
+    const { id : userId } = req.params;
     const payload = req.body;
-    const message = await updateStudent({ ...payload, id });
-    // did get it, what is the if-else in the updateStudent function to decide add/update
+    const message = await updateStudent({ ...payload, userId });
     res.json(message);
 
 });
